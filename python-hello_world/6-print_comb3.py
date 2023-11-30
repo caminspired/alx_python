@@ -1,8 +1,6 @@
-for i in range (90):
-    if i < 89:
-        if str(i)[-1] > str(i)[0]:
-            print("{:02d}".format(i), end=", ")
+for a in range (10):
+    for b in range(a + 1, 10):
+        if (a * 10 + b) < 89:
+            print("{:02d}".format(a * 10 + b), end=", ")
         else:
-            continue
-    else:
-        print("{:02d}".format(i))                   
+            print("{:02d}".format(a * 10 + b))                   
