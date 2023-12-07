@@ -9,6 +9,7 @@ if __name__ == "__main__":
         
     elif num_arg == 1:
         print("{} argument:".format(num_arg))
+        print("{}: {} \n".format(i, arg))
         
     else:
         print("{} arguments:".format(num_arg))
