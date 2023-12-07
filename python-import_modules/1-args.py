@@ -1,17 +1,12 @@
-import sys 
+import sys
 
 if __name__ == "__main__":
     argv = sys.argv[1:]
-    num_arg = len(argv)
-    
-    if num_arg == 0:
-        print("{} arguments:".format(num_arg))
-        
-    elif num_arg == 1:
-        print("{} argument:".format(num_arg))
-        print("{}: {}".format(num_arg, argv[0]))
-        
+    num_args = len(argv)
+
+    if num_args == 0:
+        print("0 arguments.")
     else:
-        print("{} arguments:".format(num_arg))
+        print("{} argument{}:".format(num_args, 's' if num_args > 1 else ''))
         for i, arg in enumerate(argv, start=1):
             print("{}: {}".format(i, arg))
