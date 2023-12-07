@@ -12,7 +12,7 @@ def safe_print_division(a, b):
         return result
     finally:
         if 'result' in locals():
-            print("{} / {} = {}".format(a, b, result) if b != 0 else "{} / {} = None".format(a, b))
+            if b != 0:
+                print("{} / {} = {}".format(a, b, result))
         else:
             print("{} / {} = None".format(a, b))
-
