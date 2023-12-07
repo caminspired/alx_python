@@ -15,4 +15,3 @@ def safe_print_division(a, b):
             print("{} / {} = {}".format(a, b, result) if b != 0 else "{} / {} = {}".format(a, b, None))
         else:
             print("{} / {} = {}".format(a, b, None))
-
