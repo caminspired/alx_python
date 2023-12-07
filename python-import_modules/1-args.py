@@ -9,7 +9,7 @@ if __name__ == "__main__":
         
     elif num_arg == 1:
         print("{} argument:".format(num_arg))
-        print("{}: {}".format(num_arg, arg[0]))
+        print("{}: {}".format(num_arg, argv[0]))
         
     else:
         print("{} arguments:".format(num_arg))
