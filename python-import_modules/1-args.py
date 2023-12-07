@@ -13,5 +13,5 @@ if __name__ == "__main__":
             print("{}: {}".format(i, arg))
             
         else:
-            print("{} arguments:\n".format(num_arg))
-            print("{}: {}".format(i, arg))
+            print("{} arguments:".format(num_arg))
+        print("{}: {}\n".format(i, arg))
