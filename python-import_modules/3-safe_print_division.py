@@ -1,4 +1,6 @@
 def safe_print_division(a, b):
+    result_printed = False  # Flag to track whether the result has been printed
+
     try:
         result = a / b
     except ZeroDivisionError:
@@ -9,7 +11,8 @@ def safe_print_division(a, b):
         return None
     else:
         print("Inside result: {}".format(result))
+        result_printed = True  # Set the flag to True after printing the result
         return result
     finally:
-        if 'result' in locals():
+        if 'result' in locals() and not result_printed:
             print("{} / {} = {}".format(a, b, result) if b != 0 else "{} / {} = {}".format(a, b, None))
