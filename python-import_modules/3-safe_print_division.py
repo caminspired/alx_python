@@ -1,5 +1,5 @@
 def safe_print_division(a, b):
-    result_printed = False  # Flag to track whether the result has been printed
+    result_printed = False  
 
     try:
         result = a / b
@@ -11,7 +11,7 @@ def safe_print_division(a, b):
         return None
     else:
         print("Inside result: {}".format(result))
-        result_printed = True  # Set the flag to True after printing the result
+        result_printed = True
         return result
     finally:
         if 'result' in locals() and not result_printed:
