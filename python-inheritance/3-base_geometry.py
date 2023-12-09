@@ -1,9 +1,12 @@
-"""
-This module contains an empty class.
-"""
-
 class BaseGeometry:
     """
-    This is an empty class for geometry operations.
+    An empty base class for geometry operations.
+
+    Methods:
+        __init_subclass__(cls, **kwargs): This method is called when a subclass is created.
+
+    Attributes:
+        None
     """
     pass
+
