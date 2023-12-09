@@ -1,3 +1,14 @@
+"""
+This module defines a Square class.
+
+The Square class represents a square geometric shape and has a private
+instance attribute for the size.
+
+Example:
+    square = Square(5)
+    print(square.get_area())  # Output: 25
+"""
+
 class Square:
     """This class defines a Square.
 
