@@ -14,4 +14,8 @@ class Square():
             
         self.__size = size
         
+        """
+        Argument size is passed for the variable self.__size
+        """
+        
 
