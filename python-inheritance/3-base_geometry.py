@@ -1,5 +1,6 @@
-""" This module contains an empty class"""
+"""This module contains class BaseGeometry"""
+
 
 class BaseGeometry:
-    """An empty base class for geometry operations"""
+    """Defines the class BaseGeometry"""
     pass
