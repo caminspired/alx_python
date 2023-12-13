@@ -1,8 +1,9 @@
-"""
-This module
-"""
+#!/usr/bin/python3
+""" this module contains class BaseGeometry """
+
+
 class BaseGeometry:
-    """A base class for geometry operations."""
+    """ defines the class BaseGeometry """
 
     def area(self):
         """
