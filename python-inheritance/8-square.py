@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" this module contains subclass Rectange that inherits from class BaseGeometry """
+""" this module contains subclass Square that inherits from subclass Rectange that inherits from class BaseGeometry """
 
 class BaseGeometry:
     """ defines the class BaseGeometry """
