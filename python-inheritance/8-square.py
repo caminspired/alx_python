@@ -83,3 +83,4 @@ class Square(Rectangle):
         """ area method returns size * size of the instance """
         
         return self.__size * self.__size   
+
