@@ -64,7 +64,7 @@ class Rectangle(BaseGeometry):
         return "[Rectangle] {}/{}".format(self.__width, self.__height)    
 
             
-class Square(Rectangle(BaseGeometry)):
+class Square(Rectangle):
     """ defines a class Square that inherits from class Rectangle which inherits from class BaseGeometry """
 
     def __init__(self, size):
