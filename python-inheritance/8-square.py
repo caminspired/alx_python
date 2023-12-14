@@ -78,7 +78,8 @@ class Square(Rectangle(BaseGeometry)):
         self.integer_validator("size", size)
         self.__size = size
         
+        
     def area(self):
-        """ area method returns size * size of the instance"""
+        """ area method returns size * size of the instance """
         
         return self.__size * self.__size   
