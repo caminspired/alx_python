@@ -22,7 +22,7 @@ class Base:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
                 
-class Rectangle(Base(id)):
+class Rectangle(Base):
     """ 
     defines class Rectangle as a subclass of class Base
     
