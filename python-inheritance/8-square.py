@@ -84,3 +84,4 @@ class Square(Rectangle):
         
         return self.__size * self.__size   
 
+print(issubclass(Square, Rectangle))
