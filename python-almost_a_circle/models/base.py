@@ -1,7 +1,7 @@
 """ This module contains the class Base """
 
 class Base:
-    """ this class defines Base with private attribute __nb_objects """
+    """ defines class Base with private attribute __nb_objects """
     __nb_objects = 0
     
     
