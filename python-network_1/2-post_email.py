@@ -36,5 +36,4 @@ if __name__ == "__main__":
     response = post_email(url, email)
 
     # Displaying the body of the response
-    print("Your email is:", email)
-    print(response.text)
+    print(response.text.strip())
