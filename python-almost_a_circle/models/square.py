@@ -1,7 +1,8 @@
-""" This module contains the class Base """
+""" This module contains the class Square """
 
-from model.rectangle import Rectangle
+from models.rectangle import Rectangle
 """ imports class Rectangle into the module """
+  
         
 class Square(Rectangle):
     """ defines a class Square as a subclass of class Rectangle """
