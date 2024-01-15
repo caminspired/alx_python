@@ -41,4 +41,4 @@ if __name__ == "__main__":
     username, password, database = sys.argv[1], sys.argv[2], sys.argv[3]
 
     # Call the select_states function with provided credentials
-    select_states(username, password, database)
+    list_states(username, password, database)
