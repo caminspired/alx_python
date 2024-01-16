@@ -1,5 +1,7 @@
 import MySQLdb
 
+cursor.execute("GRANT ALL PRIVILEGES ON database_name.* TO 'username'@'localhost' IDENTIFIED BY 'password'")
+
 try:
     # Connect to the MySQL server
     db = MySQLdb.connect(
