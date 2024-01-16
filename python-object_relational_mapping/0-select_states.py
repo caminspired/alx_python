@@ -1,7 +1,5 @@
 import MySQLdb
 
-cursor.execute("GRANT ALL PRIVILEGES ON database_name.* TO 'username'@'localhost' IDENTIFIED BY 'password'")
-
 try:
     # Connect to the MySQL server
     db = MySQLdb.connect(
@@ -14,6 +12,8 @@ try:
 
     # Create a cursor object to interact with the database
     cursor = db.cursor()
+    
+    cursor.execute("GRANT ALL PRIVILEGES ON database_name.* TO 'username'@'localhost' IDENTIFIED BY 'password'")
 
     # Execute the SQL query to retrieve states
     cursor.execute("SELECT * FROM states ORDER BY id ASC")
