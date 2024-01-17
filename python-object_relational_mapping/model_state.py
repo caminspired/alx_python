@@ -12,6 +12,14 @@ if __name__ == "__main__":
 
     # creating class States that inherits from Base
     class State(Base):
+        
+        """
+        Creates a class State in a database.
+
+        Attributes:
+        - id (int): The unique identifier for the state.
+        - name (str): The name of the state.
+        """
 
         # defining method table that creates a table with properties 
         __tablename__ = "states"
