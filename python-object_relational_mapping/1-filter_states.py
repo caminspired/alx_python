@@ -18,7 +18,7 @@ if __name__ == "__main__":
 
     # Execute the SQL query to retrieve states
     cursor.execute("SELECT * FROM states\
-                    WHERE name LIKE 'N%' COLLATE latin1_general_cs\
+                    WHERE name LIKE 'N%' COLLATE utf8mb4_bin\
                     ORDER BY states.id ASC")
 
     # Fetch all the rows
