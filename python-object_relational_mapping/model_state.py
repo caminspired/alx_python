@@ -10,11 +10,11 @@ if __name__ == "__main__":
     """initiating instance Base"""
     Base = declarative_base()
 
-    """creating class States that inherits from Base"""
+    """creating an empty class States that inherits from Base"""
     class State(Base):
         
         """
-        Creates a class State in a database.
+        Creates an empty class State in a database.
 
         Attributes:
         - id (int): The unique identifier for the state.
