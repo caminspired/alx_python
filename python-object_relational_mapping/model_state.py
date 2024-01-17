@@ -10,9 +10,9 @@ if __name__ == "__main__":
     Base = declarative_base()
     """initiating instance Base"""
 
+
     class State(Base):
         """creating class States that inherits from Base"""
-
         __tablename__ = "states"
         id = Column(Integer, primary_key=True, nullable=False)
         name = Column(String(128), nullable=False)   
