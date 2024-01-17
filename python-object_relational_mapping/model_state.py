@@ -20,8 +20,6 @@ if __name__ == "__main__":
         - id (int): The unique identifier for the state.
         - name (str): The name of the state.
         """
-
-        # defining method table that creates a table with properties 
         __tablename__ = "states"
         id = Column(Integer, primary_key=True, nullable=False)
         name = Column(String(128), nullable=False)   
