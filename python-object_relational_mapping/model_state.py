@@ -7,20 +7,12 @@ if __name__ == "__main__":
     from sqlalchemy import Column, Integer, String
     from sqlalchemy.ext.declarative import declarative_base
 
-    """initiating instance Base"""
     Base = declarative_base()
+    """initiating instance Base"""
 
-    """creating an empty class States that inherits from Base"""
     class State(Base):
-        
-        """
-        Creates an empty class State in a database.
+        """creating class States that inherits from Base"""
 
-        Attributes:
-        - id (int): The unique identifier for the state.
-        - name (str): The name of the state.
-        """
-        
         __tablename__ = "states"
         id = Column(Integer, primary_key=True, nullable=False)
         name = Column(String(128), nullable=False)   
