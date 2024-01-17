@@ -18,7 +18,7 @@ if __name__ == "__main__":
 
     # Execute the SQL query to retrieve states where name matches the argument
     cursor.execute("SELECT * FROM states\
-                    WHERE name LIKE '{}'\
+                    WHERE name LIKE '{}' COLLATE utf8mb4_bin\
                     ORDER BY states.id ASC".format(argv[4]))
 
     # Fetch all the rows
