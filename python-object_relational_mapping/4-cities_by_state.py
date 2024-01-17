@@ -17,7 +17,9 @@ if __name__ == "__main__":
     cursor = db.cursor()
 
     # Execute the SQL query to retrieve all cities
-    cursor.execute("SELECT * FROM cities ORDER BY cities.id ASC")
+    cursor.execute("SELECT cities.id, cities.name, states.name FROM cities\
+                    INNER JOIN states ON cities.state_id=states.id\
+                    ORDER BY cities.id ASC")
 
     # Fetch all the rows
     cities = cursor.fetchall()
