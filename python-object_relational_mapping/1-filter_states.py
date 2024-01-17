@@ -1,4 +1,4 @@
-# this module contains SQL scripts tha tlists all states from a database
+# this module contains SQL scripts that lists all states from a database which start with "N"
 if __name__ == "__main__":
     from sys import argv
     import MySQLdb
@@ -17,9 +17,7 @@ if __name__ == "__main__":
     cursor = db.cursor()
 
     # Execute the SQL query to retrieve states
-    cursor.execute("""SELECT * FROM states  
-                   WHERE name LIKE 'N%' 
-                   COLLATE latin1_general1_cs\ ORDER BY states.id ASC""")
+    cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' COLLATE latin1_general1_cs\ ORDER BY states.id ASC")
 
     # Fetch all the rows
     states = cursor.fetchall()
