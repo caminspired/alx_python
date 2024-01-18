@@ -7,7 +7,7 @@ if __name__ == "__main__":
     from sqlalchemy import create_engine
     from sqlalchemy.orm import sessionmaker
     
-    path = "mysql+mysqldb://{}:{}@localhost/{}"
+    path = 'mysql+mysqldb://{}:{}@localhost/{}'
     engine = create_engine(path.format(argv[1], argv[2], argv[3]))
     
     Session = sessionmaker(bind=engine)
