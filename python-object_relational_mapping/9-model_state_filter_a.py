@@ -13,7 +13,7 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
     
-    for states in session.query(State).order_by(State.id).filter_by(State.name.like('%a%')).all():
+    for states in session.query(State).filter(State.name.like('%a%').order_by(State.id)).all():
         print("{}: {}".format(states.id, states.name))
 
         
