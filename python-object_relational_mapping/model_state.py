@@ -7,7 +7,6 @@ if __name__ == "__main__":
     ''' importing attributes from SQLAlchemy '''
 
     Base = declarative_base()
-    ''' initializes variable class Base with with declarative base '''
 
 
     class State(Base):
@@ -15,9 +14,3 @@ if __name__ == "__main__":
         __tablename__ = "states"
         id = Column(Integer, primary_key=True, nullable=False)
         name = Column(String(128), nullable=False)   
-
-
-        def __init__(self, name):
-            ''' initializes an instance of class State '''
-            
-            self.name = name
