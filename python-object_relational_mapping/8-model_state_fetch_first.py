@@ -13,8 +13,10 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
     
-    if session.query(State).order_by(State.id).first():
-        print("{}: {}".format(State.id, States.name))
+    states = session.query(State).order_by(State.id).first()
+    
+    if states:
+        print("{}: {}".format(states.id, states.name))
     
     else:
         print('Nothing')
