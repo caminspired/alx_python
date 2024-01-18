@@ -1,12 +1,19 @@
 #this modules lists all states from a database
 if __name__ == "__main__":
     
-    import sys
+    '''importing from sys, model_state and sqlalchely'''
+    from sys import argv
     from model_state import Base, State
     from sqlalchemy import create_engine
     from sqlalchemy.orm import sessionmaker
     
-    path = create_engine("mysql+mysqldb://{}:{}@localhost/{}"
-                         .format(argv[1], argv[2], argv[3])
+    path = "mysql+mysqldb://{}:{}@localhost/{}"
+    engine = create_engine(path.format(argv[1], argv[2], argv[3]))
     
-    session = sessionmaker(bind=path)
+    Session = sessionmaker(bind=engine)
+    session = Session()
+    
+    for state in session.query(State).order_by(State.id).all():
+        print("{}: {}".format(states.id, states.name))
+        
+    session.close()
