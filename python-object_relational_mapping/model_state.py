@@ -11,6 +11,6 @@ if __name__ == "__main__":
 
     class State(Base):
         ''' creating class States that inherits from Base '''
-        __tablename__ = "states"
+        __tablename__ = 'states'
         id = Column(Integer, primary_key=True, nullable=False)
         name = Column(String(128), nullable=False)   
