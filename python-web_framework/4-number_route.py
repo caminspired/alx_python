@@ -28,10 +28,9 @@ def python_text(text='is cool'):
 @app.route('/number/<n>', strict_slashes=False)
 @app.route('/number/', strict_slashes=False)
 def number(n):
-    try:
-        if type(n) == int:
+    if type(n) == int:
             return '{} is a number'.format(n)
-    except ValueError:
+    else:
         return 404
     
 
