@@ -29,7 +29,7 @@ def python_text(text='is cool'):
 @app.route('/number/', strict_slashes=False)
 def number(n):
     if type(n) == int:
-        return '{} is a number'.format(n)
+        return n + ' is a number'
     else:
         return 404
     
