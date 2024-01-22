@@ -31,7 +31,7 @@ def number(n):
     try:
         type(n) == int
         return '{} is a number'.format(n)
-    except ValueError:
+    except TypeError:
         return 404
     
 
