@@ -12,30 +12,25 @@ app = Flask(__name__)
 def hello_hbnb():
     return 'Hello HBNB!'
 
-'''route for retrieving HBNB'''
 @app.route('/hbnb', strict_slashes=False)
 def hbnb():
     return 'HBNB'
 
-'''route for retrieving C'''
 @app.route('/c/<text>', strict_slashes=False)
 def c_text(text):
     return 'C ' + text.replace('_', ' ')
 
-'''route for retrieving Python'''
 @app.route('/python/<text>', strict_slashes=False)
 @app.route('/python/', strict_slashes=False)
 def python_text(text='is cool'):
     return 'Python ' + text.replace('_', ' ')
 
-'''route for retrieving is number'''
-@app.route('/number/<int:n>', strict_slashes=False)
-def number(n):
+@app.route('/number/<n>', strict_slashes=False)
+def number(n=int):
     return '{} is a number'.format(n)
-
-@app.route('/number/<!=int:n>', strict_slashes=False)
-def not_int(n):
-    return 404  
+    if not int:
+        return 404
+    
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
