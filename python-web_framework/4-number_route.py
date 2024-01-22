@@ -25,12 +25,11 @@ def c_text(text):
 def python_text(text='is cool'):
     return 'Python ' + text.replace('_', ' ')
 
-@app.route('/number/<path:n>', strict_slashes=False)
-@app.route('/number/', strict_slashes=False)
+@app.route('/number/<n>', strict_slashes=False)
 def number(n):
     try:
-        if isinstance(int(n), int):
-            return '{} is a number'.format(n)
+        n = int(n)
+        return '{} is a number'.format(n)
     except ValueError:
         return 404
     
