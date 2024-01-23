@@ -16,24 +16,18 @@ db_host = 'localhost'
 app = Flask(__name__)
 
 # Connect to alx_flask_db
-path = 'mysql+mysqldb://{}:{}@localhost/{}'
-engine = create_engine(path.format(sys.argv[1], sys.argv[2], sys.argv[3]))
-
-Session = sessionmaker(bind=engine)
-session = Session()
+path = 'mysql://{}:{}@localhost/{}'.format(sys.argv[1], sys.argv[2], sys.argv[3])
+app.config['SQLALCHEMY_DATABASE_URI'] = path
 
 db = SQLAlchemy(app)
 
 #defining user model class
-db.Model = declarative_model()
-
 
 class User(db.Model):
     ''' creating class User that inherits from Model '''
-    __tablename__ = 'user'
-    id = Column(Integer, primary_key=True)
-    name = Column(String(128))
-    email = Column(String(128), unique=True, nullable=False)   
+    id =db.Column(Integer, primary_key=True)
+    name = db.Column(String(128))
+    email = db.Column(String(128), unique=True, nullable=False)   
 
 
 # Create the database tables
