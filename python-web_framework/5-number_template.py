@@ -2,7 +2,7 @@
 
     
 '''importing flask'''
-from flask import Flask
+from flask import Flask, render_template
 
 '''creates the variable application name'''
 app = Flask(__name__)
@@ -33,7 +33,7 @@ def number(n):
     
 @app.route('/number_template/<int:n>', strict_slashes=False)
 def number_template(n=int):
-    render_template('5-number.html', n=n)
+    return render_template('5-number.html', n=n)
     if not n:
         return 404
     
