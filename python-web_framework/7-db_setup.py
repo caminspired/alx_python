@@ -25,7 +25,7 @@ db = SQLAlchemy(app)
 
 class User(db.Model):
     ''' creating class User that inherits from Model '''
-    id =db.Column(Integer, primary_key=True)
+    id = db.Column(Integer, primary_key=True)
     name = db.Column(String(128))
     email = db.Column(String(128), unique=True, nullable=False)   
 
