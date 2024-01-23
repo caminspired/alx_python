@@ -67,7 +67,7 @@ def add_user():
 
 @app.route('/users', strict_slashes=False)
 def all_users():
-    users = Users.query_all()
+    users = User.query_all()
     return render_template('users.html', users=users)
 
 
