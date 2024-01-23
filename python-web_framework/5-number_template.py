@@ -33,7 +33,7 @@ def number(n):
     
 @app.route('/number_template/<int:n>', strict_slashes=False)
 def number_template(n=int):
-    return render_template('5-number.html', n=n)
+    return render_template('5-number.html', x=n)
     if not n:
         return 404
     
