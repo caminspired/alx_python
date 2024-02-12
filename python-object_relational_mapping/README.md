@@ -1,4 +1,4 @@
-**PYTHON - OBJECT RELATIONAL MAPPING 1 (PROJECT 22 | WEEK 11)**
+**PYTHON - OBJECT RELATIONAL MAPPING 1 & 2 (PROJECT 22/23 | WEEK 10)**
 
 # INTRODUCTION/OVERVIEW
 
@@ -18,6 +18,11 @@ The following tasks will need to be completed and checked with the in-built intr
 2. Filter states by user input(12pts)
 3. SQL Injection...(10pts)
 4. Cities by states(9pts)
+5. All cities by state(12pts)
+6. First state model(9pts)
+7. All states via SQLAlchemy(9pts)
+8. First state(9pts)
+9. Contains `a`(11pts)
 
 # MANUAL REVIEW
 
