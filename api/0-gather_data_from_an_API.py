@@ -8,17 +8,16 @@ def todo_list_progress(employee_id):
     
     employee_details = requests.get(f"https://jsonplaceholder.typicode.com/users/{employee_id}")
     employee_data = employee_details.json()
-    employee_name = employee_data['name']        
-    todos = len(employee_todos)
+    employee_name = employee_data["name"]
     
     #fetching employee todos
     
     employee_todos = requests.get(f"https://jsonplaceholder.typicode.com/users/{employee_id}/todos")
     todos_details = employee_todos.json()
-    total_tasks = len(employee_details)
+    total_tasks = len(todos_details)
     completed_tasks = 0
     
-    for todo["completed"] in todos:
+    for todo["completed"] in employee_todos:
         completed_tasks +1
         
     #printing employee todo list progress          
