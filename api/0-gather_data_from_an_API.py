@@ -6,14 +6,15 @@ if __name__ == "__main__":
     import requests
     import sys
     
+    employee_id = sys.argv[1]
     
-    def todo_list_progress(employee_id=int(sys.argv[1])):
+    def todo_list_progress(employee_id=int):
         
         #fetching employee details
         
         employee_details = requests.get("https://jsonplaceholder.typicode.com/users/{employee_id}")
         employee_data = employee_details.json()
-        employee_name = employee_data["name"]        
+        employee_name = employee_data['name']        
         todos = len(employee_todos)
         
         #fetching employee todos
