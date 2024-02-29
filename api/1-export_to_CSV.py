@@ -1,6 +1,7 @@
+import csv
 import requests
 import sys
-import csv
+
 
 employee_id = int(sys.argv[1]) 
 
