@@ -20,7 +20,8 @@ if __name__ == "__main__":
         #fetching employee todos
         
         employee_todos = requests.get("https://jsonplaceholder.typicode.com/users/{employee_id}/todos")
-        total_tasks = len(employee_todos)
+        todos_details = employee_todos.json()
+        total_tasks = len(employee_details)
         completed_tasks = 0
         
         for todo["completed"] in todos:
