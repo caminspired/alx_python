@@ -23,7 +23,7 @@ def todo_list_progress(employee_id):
 
     for todo in todos_details:
         if todo["completed"]:
-            print(f"\t{todo['title']}")
+            print(f"\t {todo['title']}")
     
 if __name__ == "__main__":
     employee_id = int(sys.argv[1])    
