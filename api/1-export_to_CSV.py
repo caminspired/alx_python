@@ -46,4 +46,4 @@ def write_to_csv(employee_id, employee_name, todod_details):
         
 if __name__ == "__main__":   
     todo_list_progress(employee_id)
-
+    write_to_csv(employee_id, employee_data['name'], todos_details)
