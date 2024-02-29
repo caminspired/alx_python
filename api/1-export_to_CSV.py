@@ -30,7 +30,7 @@ def todo_list_progress(employee_id):
             print(f"\t {todo['title']}")
             
     
-def write_to_csv(employee_id, employee_name, todod_details):
+def write_to_csv(employee_id, employee_name, todos_details):
      with open("USER_ID.csv", "w", newline="") as csvfile:
          fieldnames = ["USER_ID", "USERNAME", "TASK_COMPLETED_STATUS", "TASK_TITLE"]
          writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
@@ -41,7 +41,7 @@ def write_to_csv(employee_id, employee_name, todod_details):
                 "USER_ID": employee_id,
                 "USERNAME": employee_name,
                 "TASK_COMPLETED_STATUS":str(todos['completed']),
-                "TASK_TITLE": task_title
+                "TASK_TITLE": todo['title']
             })
         
 if __name__ == "__main__":   
