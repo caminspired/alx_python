@@ -1,3 +1,14 @@
+"""
+Writes employee todo list details to a JSON file.
+
+Args:
+    employee_id (int): The ID of the employee.
+    employee_name (str): The name of the employee.
+    todos_details (list): List containing todo details.
+
+Returns:
+    None
+"""
 import json
 import requests
 import sys
