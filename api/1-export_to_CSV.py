@@ -36,13 +36,14 @@ def write_to_csv(employee_id, employee_name, todod_details):
          writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
          
          writer.writeheader()
-         writer.writerow({
-             "USER_ID": employee_id,
-             "USERNAME": employee_name,
-             "TASK_COMPLETED_STATUS":str(todos['completed']),
-             "TASK_TITLE": task_title
-         })
-    
+         for todo in todos_details:
+            writer.writerow({
+                "USER_ID": employee_id,
+                "USERNAME": employee_name,
+                "TASK_COMPLETED_STATUS":str(todos['completed']),
+                "TASK_TITLE": task_title
+            })
+        
 if __name__ == "__main__":   
     todo_list_progress(employee_id)
 
