@@ -3,7 +3,7 @@ import requests
 import sys
 
 def todo_list_progress(employee_id):
-    """
+    '''
     Retrieves the todo list progress of an employee and writes it to a JSON file.
 
     Args:
@@ -11,8 +11,8 @@ def todo_list_progress(employee_id):
 
     Returns:
         None
-    """
-    'Fetching employee general details and converting JSON'
+    '''
+    # Fetching employee general details and converting JSON
     employee_details = requests.get(f"https://jsonplaceholder.typicode.com/users/{employee_id}")
     employee_data = employee_details.json()
 
