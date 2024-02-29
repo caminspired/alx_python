@@ -40,7 +40,7 @@ def write_to_csv(employee_id, employee_name, todos_details):
             writer.writerow({
                 "USER_ID": employee_id,
                 "USERNAME": employee_name,
-                "TASK_COMPLETED_STATUS":str(todos['completed']),
+                "TASK_COMPLETED_STATUS":str(todo['completed']),
                 "TASK_TITLE": todo['title']
             })
         
