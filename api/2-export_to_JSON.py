@@ -1,3 +1,4 @@
+#retrieving employee todo list progress and writing to json
 import json
 import requests
 import sys
