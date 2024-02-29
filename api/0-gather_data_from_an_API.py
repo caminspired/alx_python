@@ -4,7 +4,7 @@ import requests
 import sys
 
 
-def todo_list_progress(employee_id=int):
+def todo_list_progress(employee_id):
     
     #fetching employee details
     
@@ -34,4 +34,4 @@ if __name__ == "__main__":
         sys.exit(1)
         
     todo_list_progress(employee_id)
-    employee_id = sys.argv[1]
+    employee_id = int(sys.argv[1])
