@@ -3,7 +3,6 @@
 import requests
 import sys
 
-employee_id = sys.argv[1]
 
 def todo_list_progress(employee_id=int):
     
@@ -27,11 +26,12 @@ def todo_list_progress(employee_id=int):
     #printing employee todo list progress          
     
     print("Employee {} is done with tasks{}/{}".format(employee_name, completed_tasks, total_tasks))
-    
-todo_list_progress(employee_id)
 
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
         print("Usage: python3 script.py <employee_id>")
         sys.exit(1)
+        
+    todo_list_progress(employee_id)
+    employee_id = sys.argv[1]
