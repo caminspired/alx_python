@@ -21,7 +21,7 @@ def todo_list_progress(employee_id):
     
     print("Employee {} is done with tasks({}/{}):".format(employee_name, completed_tasks, total_tasks))
 
-    for idx, todo in enumerate(todos_details, start=1):
+    for idx, todo in todos_details:
         if todo["completed"]:
             print(f"\t{todo['title']}")
     
