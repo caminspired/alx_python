@@ -1,5 +1,3 @@
-#Script to fetche employee todo list progress
-
 import requests
 import sys
 
@@ -8,14 +6,14 @@ def todo_list_progress(employee_id):
     
     #fetching employee details
     
-    employee_details = requests.get("https://jsonplaceholder.typicode.com/users/{employee_id}")
+    employee_details = requests.get(f"https://jsonplaceholder.typicode.com/users/{employee_id}")
     employee_data = employee_details.json()
     employee_name = employee_data['name']        
     todos = len(employee_todos)
     
     #fetching employee todos
     
-    employee_todos = requests.get("https://jsonplaceholder.typicode.com/users/{employee_id}/todos")
+    employee_todos = requests.get(f"https://jsonplaceholder.typicode.com/users/{employee_id}/todos")
     todos_details = employee_todos.json()
     total_tasks = len(employee_details)
     completed_tasks = 0
