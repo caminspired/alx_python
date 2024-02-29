@@ -7,19 +7,21 @@ import sys
 
 employee_id = int(sys.argv[1]) 
 
-#fetching employee general details
+#fetching employee general details and converting JSON 
 
 employee_details = requests.get(f"https://jsonplaceholder.typicode.com/users/{employee_id}")
 employee_data = employee_details.json()
 
-#fetching employee todo list details
+#fetching employee todo list details and converting to JSON
 
 employee_todos = requests.get(f"https://jsonplaceholder.typicode.com/users/{employee_id}/todos")
 todos_details = employee_todos.json()
 
 def todo_list_progress(employee_id):
+    #function to retrieve and print employee todo list progress 
     
-    #fetching employee name
+    
+    #fetching employee name from general details
     
     employee_name = employee_data["name"]
     
@@ -37,7 +39,7 @@ def todo_list_progress(employee_id):
             print(f"\t {todo['title']}")
             
 def write_to_json(employee_id, employee_name, todos_details):
-    #write response to json
+    #function to write response to JSON file
     
     response = {str(employee_id): [{"task": todo["title"], "completed": todo["completed"], "username": employee_name} for todo in todos_details]}
     with open(f"{employee_id}.json", "w") as json_file:
