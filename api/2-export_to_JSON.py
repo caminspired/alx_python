@@ -12,7 +12,7 @@ def todo_list_progress(employee_id):
     Returns:
         None
     """
-    # Fetching employee general details and converting JSON
+    'Fetching employee general details and converting JSON'
     employee_details = requests.get(f"https://jsonplaceholder.typicode.com/users/{employee_id}")
     employee_data = employee_details.json()
 
