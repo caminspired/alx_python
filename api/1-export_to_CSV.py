@@ -1,49 +1,32 @@
+"""import libraries alphabetically"""
 import csv
 import requests
 import sys
 
+"""Create a function to retrieve data"""
+def getData(id):
+    """
+    Data from json API
+    """
+    usersurl = "https://jsonplaceholder.typicode.com/users/{}".format(id)
+    todourl = "{}/todos".format(usersurl)
 
-employee_id = int(sys.argv[1]) 
+    request1 = requests.get(usersurl)
+    result = request1.json()
+    userid = result['id']
+    username = result['username']
 
-#fetching employee general details
-employee_details = requests.get(f"https://jsonplaceholder.typicode.com/users/{employee_id}")
-employee_data = employee_details.json()
+    request2 = requests.get(todourl)
+    tasks = request2.json()
 
-#fetching employee todo list details
-employee_todos = requests.get(f"https://jsonplaceholder.typicode.com/users/{employee_id}/todos")
-todos_details = employee_todos.json()
+    with open("{}.csv".format(userid), "w", newline='') as csvfile:
+        writer = csv.writer(csvfile, quoting = csv.QUOTE_ALL)
+        for task in tasks:
+            writer.writerow([userid, username, task['completed'], task['title']])
 
-def todo_list_progress(employee_id):
-    
-    #fetching employee name
-    employee_name = employee_data["name"]
-    
-    #fetching employee total todo list length and completed tasks
-    total_tasks = len(todos_details)
-    completed_tasks = sum(1 for todo in todos_details if todo["completed"])
-    
-    #printing employee todo list progress          
-    print("Employee {} is done with tasks({}/{}):".format(employee_name, completed_tasks, total_tasks))
-
-    for todo in todos_details:
-        if todo["completed"]:
-            print(f"\t {todo['title']}")
-            
-    
-def write_to_csv(employee_id, employee_name, todos_details):
-     with open("USER_ID.csv", "w", newline="") as csvfile:
-         fieldnames = ["USER_ID", "USERNAME", "TASK_COMPLETED_STATUS", "TASK_TITLE"]
-         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-         
-         writer.writeheader()
-         for todo in todos_details:
-            writer.writerow({
-                "USER_ID": employee_id,
-                "USERNAME": employee_name,
-                "TASK_COMPLETED_STATUS":str(todo['completed']),
-                "TASK_TITLE": todo['title']
-            })
-        
-if __name__ == "__main__":   
-    todo_list_progress(employee_id)
-    write_to_csv(employee_id, employee_data['name'], todos_details)
+if __name__ == "__main__":
+    if len(sys.argv) > 1:
+        id = sys.argv[1]
+    else:
+        id = 1
+    getData(str(id))
